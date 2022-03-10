@@ -1,0 +1,98 @@
+@media screen and (max-width: 800px){
+.main-nav{
+    position: relative;
+    justify-content: end;
+}
+.hamburger-menu{
+    display: block;
+    float: right;
+}
+.main-nav ul{
+    display: none;
+}
+.main-nav.active ul{
+    display: block;
+    position: absolute;
+    flex-direction: column;
+    background-color: #020608;
+    min-width: 150px;
+    top: 39px;
+    padding-bottom: 15px;
+
+
+    
+}
+
+    
+.main-nav .nav-link{
+    padding:3px;
+    display: flex;
+    justify-content: center;
+
+
+}
+
+.main-nav.active ul a{
+    color:rgb(225, 225, 226);
+    text-align: center;
+}
+
+.hamburger-menu{
+    height:2.2rem;
+    width:2rem;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    float: right;
+    margin-right: 25px;
+}
+.bar{
+    width:1.5rem;
+    height:2.3px;
+    border-radius:5px;
+    background-color:#eee;
+    transition: 0.5s;
+    position:relative;
+}
+.bar:before, .bar:after{
+    content:"";
+    position:absolute;
+    width:inherit;
+    height:inherit;
+    background-color: #eee;
+    transition: 0.5s;
+}
+.bar:before{
+    transform:translateY(-9px);
+}
+.bar:after{
+    transform:translateY(9px);
+}
+
+.main-nav.active .bar{
+    transform: rotate(360deg);
+    background-color:transparent;
+
+}
+.main-nav.active .bar:before{
+    transform: translateY(0) rotate(45deg);
+}
+.main-nav.active .bar:after{
+    transform: translateY(0) rotate(-45deg);
+}
+.main-nav.active .main{
+    animation:main-animation 0.5s ease;
+    cursor:pointer;
+    transform:perspective(1300px) rotateY(20deg) translate(310px) scale(0.5);
+}
+@keyframes main-animation{
+    from{
+        transform:translate(0);
+    }
+    to{
+        transform:perspective(1300px) rotateY(20deg) translate(310px) scale(0.5);
+    }
+}
+
+}
